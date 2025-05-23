@@ -82,6 +82,13 @@ source install/setup.bash
 #连接遥控器
 crsf-app -bind
 
+#原则上需要重新在机器人中重新推理生成.engine，当前版本镜像中不包含tensorrt的dev，因此需要重新安装
+sudo apt install nvidia-cuda-dev
+sudo apt install tensorrt-dev
+sudo apt install tensorrt
+#安装完毕后对你的onnx做重新推理：
+/usr/src/tensorrt/bin/trtexec --onnx=test.onnx --saveEngine=model_gn.engine
+
 #分别运行
 nohup ros2 launch locomotion_bringup hw_bringup.launch.py ctrl_mode:=wbc &
 nohup ros2 launch joy_controller joy_controller.launch.py &

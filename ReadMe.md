@@ -40,7 +40,7 @@ vcs import < sim2sim2real.repos
 
 ```bash
 #编译
-source /opt/ros/humble/setup.bash && colcon build --packages-up-to locomotion_bringup webots_bridge robot_inertia_calculator template_ros2_controller tita_controller joy_controller keyboard_controller
+source /opt/ros/humble/setup.bash && colcon build --packages-up-to locomotion_bringup webots_bridge template_ros2_controller tita_controller joy_controller keyboard_controller
 
 source install/setup.bash 
 
@@ -75,7 +75,7 @@ cd tita_ros2/
 source /opt/ros/humble/setup.bash
 
 #编译
-colcon build --packages-up-to locomotion_bringup robot_inertia_calculator template_ros2_controller tita_controller joy_controller keyboard_controller hw_broadcaster
+colcon build --packages-up-to locomotion_bringup template_ros2_controller tita_controller joy_controller keyboard_controller hw_broadcaster
 
 source install/setup.bash 
 
